@@ -17,4 +17,121 @@
 .page {
   min-inline-size: 320px;
   min-block-size: 100dvb;
+  max-inline-size: 1440px;
+  background-color: var(--background-color);
+  background-image: var(--background-gradient-image);
+  background-position: center;
+  background-size: cover;
+  background-attachment: fixed;
+  font-family: var(--main-font-variation);
+  font-variation-settings: var(--accent-font-weight);
+  color: var(--text-color);
+  margin: 0 auto;
+}
+
+@supports (font-variation-settings: normal) {
+  .page {
+    font-family: var(--main-font-variation);
+  }
+} 
+
+.header {
+  display: flex;
+  flex-direction: column;
+  justify-content: end;
+  align-items: center;
+  gap: 25px;
+  background-color: var(--background-color);
+  font-family: var(--accent-font);
+  border: 2px solid var(--accent-color);
+  max-width: var(--width-content);
+  min-height: 368px;
+  margin: 100px auto;
+  padding-block-end: 25px;
+}
+
+.cover {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+}
+
+.header__link {
+  font-size: clamp(3.0625rem, 2.7104rem + 1.5023vw, 4.0625rem);
+  text-transform: uppercase;
+  line-height: 65px;
+  text-decoration: none;
+}
+
+.header__title {
+  font-size: clamp(0.875rem, 0.6769rem + 0.8451vw, 1.4375rem);
+  text-transform: uppercase;
+  line-height: 23px;
+}
+
+.header__theme-menu {
+  align-self: center;
+  margin-inline-start: 18px;
+}
+
+.theme-menu__list {
+  display: grid;
+  grid-template-rows: repeat(3, auto);
+  gap: 9px;
+}
+
+.theme-menu__item {
+  position: relative;
+  list-style: none;
+  
+}
+
+.theme-menu__button {
+  font-size: var(--accent-font-size);
+  line-height: 14px;
+  text-transform: uppercase;
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+}
+
+.theme-menu__button:disabled {
+  opacity: 0.6;
+  pointer-events: none;
+}
+
+.theme-menu__button:disabled::before {
+  content: '▶';
+  position: absolute;
+  inset-inline-start: -20px;
+  animation: arrow 1s ease-in-out infinite alternate;
+}
+
+.theme-menu__button:hover {
+  opacity: 0.6;
+  transition: opacity 0.3s;
+}
+
+.theme-menu__button:focus {
+  outline: none;
+}
+
+.theme-menu__button:focus-visible {
+  opacity: 0.6;
+}
+
+.theme-menu__button::after  {
+  content: '';
+  display: block;
+  width: 0%;
+  height: 2px;
+  margin-block-start: -0.7px;
+  background-color: var(--accent-color);
+  transition: width 0.3s;
+}
+
+.theme-menu__button:focus-visible::after {
+  width: 100%;
 }

@@ -2,18 +2,30 @@
 <html lang="ru">
   <head>
     <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="color-scheme" content="dark light">
     <title>Закрывающий тег</title>
+    <link rel="icon" href="./svg/favicon.svg" type="image/svg+xml">
+    <link rel="icon" href="./images/favicon.ico" sizes="any">
+    <link rel="apple-touch-icon" href="./images/favicon.png" />
     <link rel="stylesheet" href="./fonts/fonts.css" />
-    <link rel="stylesheet" href="./styles/variables.css" />
     <link rel="stylesheet" href="./styles/globals.css" />
+    <link rel="stylesheet" href="./styles/variables.css" />
     <link rel="stylesheet" href="./styles/style.css" />
     <link rel="stylesheet" href="./styles/animations.css" />
     <link rel="stylesheet" href="./styles/themes.css" />
     <script src="./scripts/set-theme.js"></script>
   </head>
+
   <body class="page">
     <header class="header">
+      <div class="cover">
+        <a href="#" class="header__link">&lt;/html&gt;</a>
+        <h1 class="header__title">
+          закрывающий тег
+        </h1>
+      </div>
       <nav class="theme-menu header__theme-menu">
         <!-- Не меняйте разметку этого списка, иначе скрипты перестанут работать -->
         <ul class="theme-menu__list">
@@ -40,7 +52,65 @@
         </ul>
       </nav>
     </header>
-    <main></main>
+
+    <main class="content">
+      <section class="content__filters-section">
+        <article class="">
+          <h2 class="content-title">
+            Фритрек и нулевой спринт: Подготовка к работе
+          </h2>
+          
+        </article>
+      </section>
+      
+      <section class="content__floppy-section">
+        <button
+          type="button"
+          onclick="window['dialog-id'].showModal()"
+          aria-controls="dialog-id"
+          class="save-content button"
+        >
+          <svg 
+            width="40" 
+            height="40" 
+            viewBox="0 0 40 40"
+            class="floppy-image"
+          >
+            <use href="./svg/floppy.svg#floppy_id"></use>
+          </svg>
+          <span class="text__content">
+            Сохранить на память
+          </span>
+        </button>
+
+        <dialog id="dialog-id" class="floppy__dialog">
+          <form method="dialog">
+            <div class="floppy-text">
+              <svg 
+                width="40" 
+                height="40" 
+                viewBox="0 0 40 40"
+                class="floppy-image"
+              >
+                <use href="./svg/floppy.svg#floppy_id"></use>
+              </svg>
+              <span class="text__dialog-content">
+                Вставьте дискету, чтобы продолжить
+              </span>
+            </div>
+            <button 
+              type="submit" 
+              onclick="window['dialog-id'].close()" 
+              class="dialog-close button"
+            >
+              <span class="text__content">
+                Ок
+              </span>
+            </button>
+          </form>
+        </dialog>
+      </section>
+    </main>
     <script src="./scripts/like.js"></script>
   </body>
 </html>
