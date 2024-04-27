@@ -13,13 +13,6 @@
 Кроме этого, не меняйте HTML переключателя тем. Его разметка также гарантирует работу своего скрипта.
 */
 
-.theme-menu__button:disabled::before {
-  content: '▶';
-  position: absolute;
-  inset-inline-start: -20px;
-  animation: arrow 1s ease-in-out infinite alternate;
-}
-
 @keyframes arrow {
   0% {
     left: -20px;
@@ -32,22 +25,6 @@
   100% {
     left: -20px;
   }
-}
-
-.paint-over_buttons::before {
-  content: '';
-  position: absolute;
-  display: block;
-  background-color: var(--accent-color);
-  inline-size: 100%;
-  block-size: 100%;
-  top: 0px;
-  transform: translateX(-100%);
-  transition: transform 0.5s ease-in-out;
-}
-
-.paint-over_buttons:hover::before {
-  transform: translateX(0%);
 }
 
 .core {

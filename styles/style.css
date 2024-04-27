@@ -98,6 +98,13 @@
   pointer-events: none;
 }
 
+.theme-menu__button:disabled::before {
+  content: '▶';
+  position: absolute;
+  inset-inline-start: -20px;
+  animation: arrow 1s ease-in-out infinite alternate;
+}
+
 .theme-menu__button:hover {
   opacity: 0.6;
   transition: opacity 0.3s;
@@ -129,7 +136,7 @@
   display: flex;
   flex-direction: column;
   gap: var(--section-gap);
-  width: 100%;
+  inline-size: 100%;
 }
 
 .content__filters-section {
@@ -189,6 +196,10 @@
       text-stroke: 1px var(--border-watermark);
       text-shadow: none;
   }
+}
+
+.upper-text {
+  text-transform: uppercase;
 }
 
 .filter__any-image {
@@ -303,6 +314,22 @@
   z-index: 1;
 }
 
+.paint-over_buttons::before {
+  content: '';
+  position: absolute;
+  display: block;
+  background-color: var(--accent-color);
+  inline-size: 100%;
+  block-size: 100%;
+  top: 0px;
+  transform: translateX(-100%);
+  transition: transform 0.5s ease-in-out;
+}
+
+.paint-over_buttons:hover::before {
+  transform: translateX(0%);
+}
+
 .paint-over_buttons:focus {
   outline: none;
 }
@@ -324,7 +351,7 @@
   align-items: center;
   gap: 8px;
   background-color: var(--background-color);
-  inline-size: 340px;
+  inline-size: clamp(19.125rem, 18.377rem + 3.192vw, 21.25rem);
   padding-block: 15px;
 }
 
@@ -344,18 +371,19 @@
   border: 2px solid var(--accent-color);
   background-color: var(--background-color);
   padding: 30px;
-  max-width: 357px;
+  inline-size: clamp(21.313rem, 20.96rem + 1.502vw, 22.313rem);
 }
 
 .content__dialog {
   display: flex;
   flex-direction: column;
+  justify-content: center;
+  align-items: center;
   gap: 30px;
 }
 
 dialog::backdrop {
-  background-color: rgb(0 0 0 / 0.7);
-  backdrop-filter: blur(1px);
+  background-color: rgb(0 0 0 / 0.75);
 }
 
 .floppy__dialog .floppy-image {
@@ -395,7 +423,6 @@ dialog::backdrop {
 
   .save-content {
     flex-direction: column;
-    inline-size: 306px;
   }
   
   .save-content .floppy-image {
@@ -404,8 +431,6 @@ dialog::backdrop {
   }
 
   .floppy__dialog {
-    padding-inline: 42px;
     padding-block: 32px;
-    max-width: 341px;
   }
 }

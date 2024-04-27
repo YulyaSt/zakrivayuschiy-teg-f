@@ -9,10 +9,11 @@
   --text-color: #000000;
   --background-color: #FFFFFF;
   --background-gradient-top: #E7E7E7;
-  --background-gradient-bottom: #1A1A1A; 
+  --background-gradient-bottom: #1A1A1A;
+  --background-gradient-transparent: #d3d3d3;
   --background-gradient-image: 
-    repeating-linear-gradient(to right, #d3d3d3 0 2px, transparent 2px 4px), 
-    repeating-linear-gradient(to bottom, #d3d3d3 0 2px, transparent 2px 4px), 
+    repeating-linear-gradient(to right, var(--background-gradient-transparent) 0 2px, transparent 2px 4px), 
+    repeating-linear-gradient(to bottom, var(--background-gradient-transparent) 0 2px, transparent 2px 4px), 
     repeating-linear-gradient(to bottom, var(--background-gradient-top) 0.01%, var(--background-gradient-bottom));
   --accent-color: #000000;
   --hover-text-button: #FFFFFF;
